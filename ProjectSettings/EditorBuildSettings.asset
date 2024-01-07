@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/login.unity
+    guid: 5a22a69161aa9ed4daeba0335bc98110
+  - enabled: 1
+    path: Assets/Scenes/homepage.unity
+    guid: cea89a788e32d154795ef2a062fd10fc
+  - enabled: 1
+    path: Assets/Scenes/5 - Streaming.unity
+    guid: 863dec49b0c6a45699439faa2930b57f
+  - enabled: 1
+    path: Assets/Scenes/TextToSpeechScene.unity
+    guid: 62d65c92a4b4f4c479e7635e9884d53a
+  - enabled: 1
+    path: Assets/Scenes/Task Reminder.unity
+    guid: 62d36c928eeb7de498521b2b616e5476
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bba6cceeb6503814186030571b408890, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 92d963c33d2f43147b795cac80c34dd2, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4b63753842496d643883be3e37d03a31, type: 2}
