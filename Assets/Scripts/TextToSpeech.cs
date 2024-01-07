@@ -15,6 +15,7 @@ public class TextToSpeechPayload
     public string response_format = "wav"; // Explicitly set to "wav" for Unity compatibility
 }
 
+
 public class TextToSpeech : MonoBehaviour
 {
     public TMP_InputField inputField; // Assign this in the Inspector
@@ -130,6 +131,8 @@ public class TextToSpeech : MonoBehaviour
         return tcs.Task;
     }
 
+
+//this method converts wav file formal to the audio player
     private AudioClip ToAudioClip(byte[] wavFile)
     {
         int headerSize = 44; // Assuming the WAV file has a 44-byte header
