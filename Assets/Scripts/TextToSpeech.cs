@@ -44,10 +44,7 @@ public class TextToSpeech : MonoBehaviour
 
             StartCoroutine(ConvertTextToSpeechAndPlayCoroutine(inputField.text));
         }
-        else
-        {
-            
-        }
+        
     }
 
     private IEnumerator ConvertTextToSpeechAndPlayCoroutine(string text)
@@ -65,10 +62,7 @@ public class TextToSpeech : MonoBehaviour
             audioData = task.Result;
             isSuccess = audioData != null;
         }
-        catch (System.Exception e)
-        {
-           
-        }
+        
 
         if (isSuccess && audioData != null)
         {
@@ -83,15 +77,9 @@ public class TextToSpeech : MonoBehaviour
                     yield return null;
                 }
             }
-            else
-            {
-                
-            }
+           
         }
-        else if (!isSuccess)
-        {
-            
-        }
+        
 
         // Re-enable the input field and button after audio has played or if there's an error
         inputField.interactable = true;
