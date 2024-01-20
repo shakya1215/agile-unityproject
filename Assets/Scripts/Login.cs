@@ -49,14 +49,14 @@ public class Login : MonoBehaviour
             Debug.Log("Credential file doesn't exist");
         }
     }
-
+  //initializing firebase
     void InitializeFirebase()
     {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         auth.StateChanged += AuthStateChanged;
         AuthStateChanged(this, null);
     }
-
+    
     void AuthStateChanged(object sender, System.EventArgs eventArgs)
     {
         if (auth.CurrentUser != user)
@@ -79,7 +79,7 @@ public class Login : MonoBehaviour
         errorText.text = errorMessage;
         Debug.Log($"Error message updated: {errorMessage}");
     }
-
+  //login
     void login()
     {
         bool isExists = false;
