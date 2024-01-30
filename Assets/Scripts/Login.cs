@@ -24,31 +24,7 @@ public class Login : MonoBehaviour
 
     ArrayList credentials;
 
-    void Start()
-    {
-        errorText.text = "";
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
-            var dependencyStatus = task.Result;
-            FirebaseApp app = FirebaseApp.DefaultInstance;
-            if (dependencyStatus == Firebase.DependencyStatus.Available)
-            {
-                InitializeFirebase();
-            }
-            else
-            {
-                Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
-            }
-        });
-
-        if (File.Exists(Application.dataPath + "/credentials.txt"))
-        {
-            credentials = new ArrayList(File.ReadAllLines(Application.dataPath + "/credentials.txt"));
-        }
-        else
-        {
-            Debug.Log("Credential file doesn't exist");
-        }
-    }
+    
   //initializing firebase
     void InitializeFirebase()
     {
