@@ -121,24 +121,7 @@ public class TextToSpeech : MonoBehaviour
 
 
 //this method converts wav file formal to the audio player
-    private AudioClip ToAudioClip(byte[] wavFile)
-    {
-        int headerSize = 44; // Assuming the WAV file has a 44-byte header
-        var sampleCount = (wavFile.Length - headerSize) / 2; // 2 bytes per sample (16-bit audio)
-        var frequency = 44100; // Common sample rate
-        var audioClip = AudioClip.Create("SpeechAudioClip", sampleCount, 1, frequency, false);
-        float[] data = new float[sampleCount];
-
-        for (int i = 0; i < sampleCount; i++)
-        {
-            short sample = (short)((wavFile[i * 2 + headerSize] & 0xFF) | (wavFile[i * 2 + headerSize + 1] << 8));
-            data[i] = sample / 32768f;
-        }
-
-        audioClip.SetData(data, 0);
-        return audioClip;
-    }
-
+   
     public class UnityWebRequestException : System.Exception
     {
         public UnityWebRequestException(string message) : base(message) { }
