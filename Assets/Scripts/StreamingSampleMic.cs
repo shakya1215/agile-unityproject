@@ -38,9 +38,7 @@ namespace Whisper.Samples
                 _stream.StartStream();
                 microphoneRecord.StartRecord();
             }
-            else
-                microphoneRecord.StopRecord();
-        
+           
             buttonText.text = microphoneRecord.IsRecording ? "Stop" : "Record";
         }
     
