@@ -61,5 +61,8 @@ public class SignUp : MonoBehaviour
         return password == confirmPassword;
     }
 
-   
+    void UpdateErrorText(string errorMessage)
+    {
+        errorText.text = errorMessage;
+    }
 }
