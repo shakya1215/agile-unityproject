@@ -227,17 +227,6 @@ public class ReminderManager : MonoBehaviour
         }
     }
 
-
-    public void DeleteAllReminders()
-    {
-        PlayerPrefs.DeleteAll(); // Delete all reminders from local storage
-        foreach (var reminderButton in reminderButtons)
-        {
-            Destroy(reminderButton); // Destroy all reminder buttons from the UI
-        }
-        reminderButtons.Clear(); // Clear the list of reminder buttons
-    }
-
     public void BackToCreateReminder()
     {
         ShowCreateReminderScreen();
