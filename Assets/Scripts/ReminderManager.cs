@@ -227,6 +227,17 @@ public class ReminderManager : MonoBehaviour
         }
     }
 
+
+    public void DeleteAllReminders()
+    {
+        PlayerPrefs.DeleteAll();
+        foreach (var reminderButton in reminderButtons)
+        {
+            Destroy(reminderButton); 
+        }
+        reminderButtons.Clear(); 
+    }
+
     public void BackToCreateReminder()
     {
         ShowCreateReminderScreen();
