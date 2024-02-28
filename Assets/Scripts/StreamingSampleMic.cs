@@ -17,11 +17,8 @@ namespace Whisper.Samples
         public Text buttonText;
         public Text text;
         public ScrollRect scroll;
-
-        public text messagebar;
         private WhisperStream _stream;
 
-        //start
         private async void Start()
         {
             _stream = await whisper.CreateStream(microphoneRecord);
@@ -34,8 +31,6 @@ namespace Whisper.Samples
             button.onClick.AddListener(OnButtonPressed);
         }
 
-
-    //when the button is pressed
         private void OnButtonPressed()
         {
             if (!microphoneRecord.IsRecording)
@@ -49,18 +44,14 @@ namespace Whisper.Samples
             buttonText.text = microphoneRecord.IsRecording ? "Stop" : "Record";
         }
     
-        //when the record starts
         private void OnRecordStop(AudioChunk recordedAudio)
         {
             buttonText.text = "Record";
         }
     
-        //show the result
         private void OnResult(string result)
         {
             text.text = result;
-            messagebar.text = result;
-
             UiUtils.ScrollDown(scroll);
         }
         
