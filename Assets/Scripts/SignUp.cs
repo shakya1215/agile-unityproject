@@ -15,9 +15,11 @@ public class SignUp : MonoBehaviour
 
     private FirebaseAuth auth;
     private FirebaseUser user;
+    
 
     void Start()
     {
+        //firebase authentication 
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     }
 
